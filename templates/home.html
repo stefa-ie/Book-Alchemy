@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  </head>
+  <body>
+    <h1> Book Library </h1>
+    {% for book in books %}
+    <div>
+      <h2>{{ book.title }}</h2>
+      <h3>{{ book.author.name }}</h3>
+      <p> ISBN: {{ book.isbn }}</p>
+      <img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="Book Cover">
+    </div>
+    {% endfor %}
+
+  </body>
+</html>
