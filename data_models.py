@@ -1,7 +1,4 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, Integer, String
-from sqlalchemy import ForeignKey
-from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import sessionmaker, relationship
 

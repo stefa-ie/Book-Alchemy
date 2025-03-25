@@ -6,13 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   </head>
   <body>
+
+    <search>
+      <form method="post" action="{{ url_for('search') }}">
+        <input name="search" id="search" placeholder="Search.." value="{{ search_query or '' }}">
+        <button type="submit">Search</button>
+      </form>
+    </search>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
     <h1> Book Library </h1>
+
+    <form method="get" action="{{ url_for('sorting') }}">
+      <label for="sort_by">Sort by:</label>
+      <select name="sort_by" id="sort_by">
+          <option value="title" {% if sort_by == 'title' %}selected{% endif %}>Title </option>
+          <option value="author" {% if sort_by == 'author' %}selected{% endif %}>Author </option>
+      </select>
+      <button type="submit">Sort</button>
+    </form>
+
     {% for book in books %}
     <div>
       <h2>{{ book.title }}</h2>
       <h3>{{ book.author.name }}</h3>
       <p> ISBN: {{ book.isbn }}</p>
       <img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="Book Cover">
+      <form method="post" action="{{ url_for('delete', book_id=book.id) }}">
+        <button type="submit">DELETE BOOK</button>
+      </form>
     </div>
     {% endfor %}
 
