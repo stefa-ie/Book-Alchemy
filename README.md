@@ -21,6 +21,10 @@ The Basics of the app cover:
 ## 💾 Usage
 Instructions on how to use the project:
 ```sh
+# Clone the repository
+git clone https://github.com/stefa-ie/Book-Alchemy.git
+```
+```sh
 """
 Uncomment the section below in app.py (l. 16-17) to execute the program for initial setup.
 Once initialized, ensure to comment it out again.
@@ -28,10 +32,7 @@ Once initialized, ensure to comment it out again.
 with app.app_context():
   db.create_all()
 ```
-```sh
-# Clone the repository
-git clone https://github.com/stefa-ie/Book-Alchemy.git
-```
+
 ```sh
 # Run the application
 python app.py
